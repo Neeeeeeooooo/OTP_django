@@ -21,3 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),  # Directly include 'myapp.urls' without the 'myapp/' prefix
 ]
+
