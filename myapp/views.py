@@ -7,6 +7,7 @@ from django.contrib import messages
 import logging
 from django.http import JsonResponse
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 # Firebase initialization
 firebase = pyrebase.initialize_app(settings.FIREBASE_CONFIG)
 auth = firebase.auth()
@@ -107,9 +108,11 @@ def login_view(request):
     return render(request, 'login.html')
 
 # User Interface View
+@login_required
 def user_view(request):
     return render(request, 'user.html')
 
+@login_required
 # Admin Interface View
 def admin_view(request):
     return render(request, 'admin.html')
