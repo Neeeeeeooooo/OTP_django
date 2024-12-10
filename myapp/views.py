@@ -78,7 +78,7 @@ def verify_otp_view(request):
                 # Sign in the user using Firebase Authentication
                 user = auth.sign_in_with_email_and_password(email, password)
                 if role == 'admin':
-                     return redirect('admin')
+                     return redirect('teacher')
                 else:
                      return redirect('user')
             except Exception as e:
@@ -99,7 +99,7 @@ def login_view(request):
         try:
             user = auth.sign_in_with_email_and_password(email, password)
             if role == 'admin':
-                return redirect('admin')
+                return redirect('teacher')
             else:
                 return redirect('user')
         except:
