@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from . import views
 
 urlpatterns = [
-    path('', lambda request: redirect('login')),  # This will redirect the root URL of /myapp/ to /myapp/login/
+
     path('login/', views.login_view, name='login'),
     path('register/', views.register_view, name='register'),
     path('verify_otp/', views.verify_otp_view, name='verify_otp'),
